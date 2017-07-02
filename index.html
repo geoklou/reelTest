@@ -27,6 +27,7 @@ body{background-color: black;}
 }
 .right{float:right;}
 .top{margin-top:90px; margin-left:-30px; position:absolute;}
+.left{margin-left:0px; position: absolute;}
 
 </style>
 </head>
@@ -48,11 +49,52 @@ body{background-color: black;}
                         </div>
                     </form>
                 </div>
-                <div id="moviesHere" class="row movieContainer"></div>
-                <ul id="pagination"></ul>
             </div>
         </div>
     
+<!--search boxes-->
+<div class="form-inline left">
+    <div class="input-group add-on">
+      <input class="form-control" placeholder="Title" name="" id="title-input" type="text">
+        <div class="input-group-btn h2">
+        <button class="btn btn-default right" type="submit" id="title-input"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+    </div>
+  
+    <div class="input-group add-on">
+      <input class="form-control" placeholder="Year" name="" id="year-input" type="number">
+        <div class="input-group-btn h2">
+        <button class="btn btn-default right" type="submit" id="year-input"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+    </div>
+   
+    <div class="input-group add-on">
+      <input class="form-control" placeholder="Genre" name="" id="genre-input" type="text">
+        <div class="input-group-btn h2">
+        <button class="btn btn-default right" type="submit" id="genre-input"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+    </div>
+
+  <div class="input-group add-on">
+      <input class="form-control" placeholder="Director" name="" id="director-input" type="text">
+        <div class="input-group-btn h2">
+        <button class="btn btn-default right" type="submit" id="director-input"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+  </div>
+  
+  <div class="input-group add-on">
+      <input class="form-control" placeholder="Actor" name="" id="actor-input" type="text">
+        <div class="input-group-btn h2">
+        <button class="btn btn-default right" type="submit" id="actor-input"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+  </div>
+
+ <!--    <div class="center" style="margin:10px;"><input type="button" value="Submit" id="find-movie" class=""></input>
+    </div> -->
+<!--search boxes ends-->
+</div>
+
+<!--container ends-->
 </div>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
