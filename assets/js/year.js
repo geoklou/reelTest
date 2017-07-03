@@ -1,5 +1,5 @@
     $(document).ready(function() {
-    $('#title-input').on("click", function(e) { //event handler for submit button
+    $('#year-input').on("click", function(e) { //event handler for submit button
         event.preventDefault(); //prevents refreshing
         var validate = Validate();
         $('#moviesHere').html(validate);
@@ -9,8 +9,8 @@
     });
 
     function CallAPI(page) {
-        var show = $('#titleSearch').val().trim(); //takes user input from search
-        var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=50c9867e013d532a54d305162ee29e35&query=" + show;
+        var year = $('#yearSearch').val().trim(); //takes user input from search
+        var queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=50c9867e013d532a54d305162ee29e35&primary_release_year=" + year;
 
         $.ajax({ //AJAX call for specific show being clicked
             url: queryURL,
@@ -25,12 +25,11 @@
             
             for (var i = 0; i < results.length; i++) {
 
-                var str = results[i].title; //lower case search term, replace spaces with dashes
-                str = str.replace(/\s+/g, '-').toLowerCase();
+                var str = results[i].release_year;
 
                 var movieBox = $('<div>');
                 movieBox.addClass('col-xs-12 col-md-6');
-                movieBox.attr('data-name',str)
+                movieBox.attr('data-name', str)
 
                 var posterBox = $('<div>');
                 posterBox.addClass('col-xs-12 col-md-4');
@@ -40,16 +39,16 @@
                 img.attr("src", "http://image.tmdb.org/t/p/w185//" + results[i].poster_path);
                 posterBox.append(img);
 
+                var yearBox = $("<div>");
+                yearBox.addClass('col-xs-12 col-md-4');
+                var y = $("<p>").html(results[i].release_date + "</p>");
+                yearBox.append(y);
+
                 var infoBox = $('<div>');
                 infoBox.addClass('col-xs-12 col-md-8');
 
-                var information = $('<h5>').html("<tr> <td>" + results[i].title + " </td></tr> " + "<tr><td>" + results[i].overview + " </td></tr> ");
+                var information = $('<p>').html("<tr><td> " + results[i].title + " </td></tr> " + "<tr><td>" + results[i].overview + " </td></tr>");
                 infoBox.append(information);
-
-                var yearBox = $("<div>");
-                yearBox.addClass('col-xs-12 col-md-4');
-                var yr = $("<p>").html(results[i].release_date + "</p>");
-                yearBox.append(yr);
 
                 // var reviewBox = $('<div>');
                 // reviewBox.addClass('col-xs-12 col-md-3');
@@ -62,16 +61,17 @@
                 $('#moviesHere').append(movieBox);
 
             }
+
             }).fail(function(err) {
               throw err;
-                // Paging(pages);
+            // Paging(pages);
         });
     }
 
     function Validate() {
         var errorMessage = "";
-        if ($("#titleSearch").val() === "") {
-            errorMessage += "► Enter Search Text";
+        if ($("#yearSearch").val() === "") {
+            errorMessage += "► Enter Search Year";
         }
         return errorMessage;
     }
