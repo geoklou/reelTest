@@ -6,37 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reel Ratings</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <style>
-body{background-color: black; color:white; font-size: 14px; line-height: 120%}
-.jumbotron {
-    background: #000 url("assets/media/banner_sml1.png") no-repeat center center;
-    /*background-size: 100% 100%;*/
-    background-size: cover;
-    -moz-background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    max-width:100% 100%;
-    /*height:auto;*/
-    height:180px;
-    color: #FFF; 
-}
-
-.two{margin:2px;}
-.bold{font-weight: bold; font-size: 120%;}
-.jumbotron:after {content:"";}
-.right{float:right;}
-.top{margin-top:90px; margin-left:-30px; position:absolute;}
-.top-60{margin-top:60px;position:absolute;}
-.left{margin-left:0px; position: absolute;}
-.top-10{margin-top:10px;}
-
-@media screen and (max-width:640px){
-  .jumbotron {
-    height:120px;
-    max-width:100% 100%;
-}
-</style>
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/new_style.css">
 </head>
 
 <body>
@@ -65,6 +36,7 @@ body{background-color: black; color:white; font-size: 14px; line-height: 120%}
         </div>
     
 <!--5 search boxes-->
+<form id="searchForm">
 <div class="form-inline left">
     <div class="input-group add-on">
       <input class="form-control" placeholder="Title" name="" id="titleSearch" type="text">
@@ -80,12 +52,12 @@ body{background-color: black; color:white; font-size: 14px; line-height: 120%}
         </div>
     </div>
    
-    <div class="input-group add-on">
+<!--     <div class="input-group add-on">
       <input class="form-control" placeholder="Genre" name="" id="genreSearch" type="text">
         <div class="input-group-btn h2">
         <button class="btn btn-default right" type="submit" id="genre-input"><i class="glyphicon glyphicon-search"></i></button>
         </div>
-    </div>
+    </div> -->
 
   <div class="input-group add-on">
       <input class="form-control" placeholder="Director" name="" id="directorSearch" type="text">
@@ -100,10 +72,54 @@ body{background-color: black; color:white; font-size: 14px; line-height: 120%}
         <button class="btn btn-default right" type="submit" id="actor-input"><i class="glyphicon glyphicon-search"></i></button>
         </div>
   </div>
- <!--    <div class="center" style="margin:10px;"><input type="button" value="Submit" id="find-movie" class=""></input>
-    </div> -->
+    
+    <!-- <div class="center" style="margin:10px;"><input type="button" value="Submit" id="find-movie" style="color:blue;"></input></div> -->
 <!--search boxes ends-->
 </div>
+</form>
+
+
+<p></p>
+<br>
+<p></p>
+<br>
+
+
+
+
+<!-- NEW: genre search-->
+<div class="input-group add-on">
+        <input class="form-control" placeholder="Select Genre" id="" name="" type="text">
+        <select name="" class="selectpicker" id="genreSearch" style="color:blue;">
+            <!-- <div class=""> -->
+                <option>Action</option>
+                <option>Adventure</option>
+                <option>Animation</option>
+                <option>Comedy</option>
+                <option>Crime</option>
+                <option>Documentary</option>
+                <option>Drama</option>
+                <option>Family</option>
+                <option>Fantasy</option>
+                <option>History</option>
+                <option>Horror</option>
+                <option>Music</option>
+                <option>Mystery</option>
+                <option>Romance</option>
+                <option>Science Fiction</option>
+                <option>TV Movie</option>
+                <option>Thriller</option>
+                <option>War</option>
+                <option>Western</option>
+            </optgroup>
+            <!-- </div> -->
+        </select>
+        <!-- <div class="input-group-btn "> -->
+        <button class="btn btn-default" type="submit" id="genre-input"><i class="glyphicon glyphicon-search"></i></button>
+        <!-- </div> -->
+</div> 
+<!--genre search ends here-->
+
 
 <div id="moviesHere" class="row movieContainer top-60" ></div>
 <!-- <ul id="pagination"></ul> -->
@@ -115,6 +131,10 @@ body{background-color: black; color:white; font-size: 14px; line-height: 120%}
      <!-- <script type="text/javascript" src="jquery.twbsPagination.js"></script> -->
     <script type="text/javascript" src="assets/js/app.js"></script>
     <script type="text/javascript" src="assets/js/year.js"></script>
+    <script type="text/javascript" src="assets/js/genre.js"></script>
+    <script>
+// $("#searchForm").validate();
+</script>
 </body>
 
 </html>
