@@ -14,23 +14,11 @@
 
     <div class="container">
 
-<!--jamie's form-->
         <div class="row row-offcanvas row-offcanvas-right">
             <div class="col-xs-12">
                 <div class="jumbotron">
                     <h1 class="right">movie reviews</h1>
-                    <!-- <p></p> -->
-                    <!-- <form class="form-inline top">
-                        <div class="form-group ">
-                            <input type="text" class="form-control " id="titleSearch" placeholder="movie by title">
-                            <input type="text" class="form-control " id="ySearch" placeholder="movie by year">
-                            <input type="text" class="form-control " id="gSearch" placeholder="movie by genre">
-                            <input type="text" class="form-control " id="directorSearch" placeholder="movie by director">
-                            <input type="text" class="form-control " id="actorSearch" placeholder="movie by actor">
-                            <button type="submit" class="btn btn-default" id="addShow">Submit</button>
-                        </div>
-                    </form> -->
-
+<!--jamie's form-->
                 </div>
             </div>
         </div>
@@ -51,47 +39,13 @@
         <button class="btn btn-default right" type="submit" id="year-input"><i class="glyphicon glyphicon-search"></i></button>
         </div>
     </div>
-   
-<!--     <div class="input-group add-on">
-      <input class="form-control" placeholder="Genre" name="" id="genreSearch" type="text">
-        <div class="input-group-btn h2">
-        <button class="btn btn-default right" type="submit" id="genre-input"><i class="glyphicon glyphicon-search"></i></button>
-        </div>
-    </div> -->
-
-  <div class="input-group add-on">
-      <input class="form-control" placeholder="Director" name="" id="directorSearch" type="text">
-        <div class="input-group-btn h2">
-        <button class="btn btn-default right" type="submit" id="director-input"><i class="glyphicon glyphicon-search"></i></button>
-        </div>
-  </div>
-  
-  <div class="input-group add-on">
-      <input class="form-control" placeholder="Actor" name="" id="actorSearch" type="text">
-        <div class="input-group-btn h2">
-        <button class="btn btn-default right" type="submit" id="actor-input"><i class="glyphicon glyphicon-search"></i></button>
-        </div>
-  </div>
-    
-    <!-- <div class="center" style="margin:10px;"><input type="button" value="Submit" id="find-movie" style="color:blue;"></input></div> -->
-<!--search boxes ends-->
-</div>
-</form>
-
-
-<p></p>
-<br>
-<p></p>
-<br>
-
-
-
 
 <!-- NEW: genre search-->
-<div class="input-group add-on">
-        <input class="form-control" placeholder="Select Genre" id="" name="" type="text">
+    <div class="input-group add-on">
+        <!-- <input class="form-control" placeholder="Select Genre Below" name="" type="text"> -->
         <select name="" class="selectpicker" id="genreSearch" style="color:blue;">
             <!-- <div class=""> -->
+                <option>---Select Genre---</option>
                 <option>Action</option>
                 <option>Adventure</option>
                 <option>Animation</option>
@@ -117,8 +71,29 @@
         <!-- <div class="input-group-btn "> -->
         <button class="btn btn-default" type="submit" id="genre-input"><i class="glyphicon glyphicon-search"></i></button>
         <!-- </div> -->
-</div> 
-<!--genre search ends here-->
+    </div> 
+    <!--genre search ends here-->
+
+  <div class="input-group add-on">
+      <input class="form-control" placeholder="Director" name="" id="directorSearch" type="text">
+        <div class="input-group-btn h2">
+        <button class="btn btn-default right" type="submit" id="director-input"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+  </div>
+  
+  <div class="input-group add-on">
+      <input class="form-control" placeholder="Actor" name="" id="actorSearch" type="text">
+        <div class="input-group-btn h2">
+        <button class="btn btn-default right" type="submit" id="actor-input"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+  </div>
+    <!-- group submit button starts : to remove if use individual search inputs-->
+    <!-- <div class="center" style="margin:10px;"><input type="button" value="Submit" id="find-movie" style="color:blue;"></input></div> --> 
+    <!--group submit button ends-->
+    <!--search boxes ends-->
+</div>
+</form>
+
 
 
 <div id="moviesHere" class="row movieContainer top-60" ></div>

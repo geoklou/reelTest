@@ -11,7 +11,7 @@
     function CallAPI(page) {
         var show = $('#titleSearch').val().trim(); //takes user input from search
         var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=50c9867e013d532a54d305162ee29e35&query=" + show;
-
+   
         $.ajax({ //AJAX call for specific show being clicked
             url: queryURL,
             method: "GET"
@@ -51,11 +51,6 @@
                 var yr = $("<p>").html(results[i].release_date + "</p>");
                 yearBox.append(yr);
 
-                // var reviewBox = $('<div>');
-                // reviewBox.addClass('col-xs-12 col-md-3');
-
-                // var reviews = $('<h5>').html("The Movie DB - " + results[i].vote_average);
-                // reviewBox.append(reviews);
                 movieBox.addClass("");
                 movieBox.append(posterBox, infoBox, yearBox);
 
@@ -64,7 +59,7 @@
             }
             }).fail(function(err) {
               throw err;
-                // Paging(pages);
+            // Paging(pages);
         });
     }
 
@@ -76,13 +71,28 @@
         return errorMessage;
     }
 
-    function Paging(totalPage) {
-        var obj = $("#pagination").twbsPagination({
-            totalPages: totalPage,
-            visiblePages: 10,
-            onPageClick: function(event, page) {
-                CallAPI(page);
-            }
-        });
-    }
+
+    // $(function() {
+    //     var obj = $('#pagination').twbsPagination({
+    //         totalPages: 35,
+    //         visiblePages: 10,
+    //         onPageClick: function (event, page) {
+    //              // CallAPI(page);
+    //             console.info(page);
+    //         }
+    //     });
+    //     console.info(obj.data());
+    // });
+
+
+
+//     function Paging(totalPage) {
+//         var obj = $("#pagination").twbsPagination({
+//             totalPages: totalPage,
+//             visiblePages: 10,
+//             onPageClick: function(event, page) {
+//                 CallAPI(page);
+//             }
+//         });
+//     }
 });

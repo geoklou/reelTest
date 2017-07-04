@@ -1,5 +1,20 @@
 
-body{background-color: black; color:white; font-size: 14px; line-height: 120%}
+ * {
+  margin: 0;
+}
+
+html{
+  height: 100%;
+}
+
+body{
+    background-color: black; 
+    font-family:sans-serif;
+    color:white; 
+    font-size: 14px; 
+    line-height: 120%; 
+    height:100%; 
+    margin:0px;}
 
 .jumbotron {
     background: #000 url("../media/banner_sml1.png") no-repeat center center;
@@ -22,6 +37,37 @@ body{background-color: black; color:white; font-size: 14px; line-height: 120%}
 .top-60{margin-top:60px;position:absolute;}
 .left{margin-left:0px; position: absolute;}
 .top-10{margin-top:10px;}
+
+/*.wrap {
+  min-height: 100%;
+  margin-bottom: 50px; 
+}
+
+.wrap:after {+
+  content: "";
+  display: block;
+}
+.sticky-footer, .wrap:after {
+  height: 60px; 
+}
+.sticky-footer{
+  margin-top:-60px;
+}
+*/
+footer{
+position: relative;
+width:auto;
+font-size: 90%;
+padding:5px 5px 5px 5px;
+clear:both;
+color:#333;
+background-color: #ededed;
+text-align: center;
+border-top: 3px green solid;
+margin-top:10px;
+bottom: 0;
+}
+
 
 @media screen and (max-width:640px){
   .jumbotron {
