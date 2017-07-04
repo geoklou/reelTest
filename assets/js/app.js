@@ -1,14 +1,7 @@
     $(document).ready(function() {
     $('#title-input').on("click", function(e) { //event handler for submit button
         event.preventDefault(); //prevents refreshing
-        var validate = Validate();
-        $('#moviesHere').html(validate);
-        if (validate.length === 0) {
-            CallAPI(1);
-        }
-    });
 
-    function CallAPI(page) {
         var show = $('#titleSearch').val().trim(); //takes user input from search
         var queryURL = "https://api.themoviedb.org/3/search/movie?api_key=50c9867e013d532a54d305162ee29e35&query=" + show;
    
@@ -61,7 +54,8 @@
               throw err;
             // Paging(pages);
         });
-    }
+    });
+});
 
     function Validate() {
         var errorMessage = "";
@@ -95,4 +89,4 @@
 //             }
 //         });
 //     }
-});
+
